@@ -1,0 +1,14 @@
+input{
+    width: 100%;
+    
+} 
+mat-form-field{
+    width: 100%;
+}
+mat-card{
+margin-left: 5%;
+margin-right: 5%;;
+}
+
+button{background-color: rgb(255, 5, 0);}
+

@@ -1,0 +1,14 @@
+<!--<app-navbar></app-navbar>-->
+ <!-- <app-carousel></app-carousel> -->
+<!--app-footer></app-footer> -->
+<img src="../../../assets/as/no_internet_conenction-01_4x.png" style="display:none">
+
+<div *ngIf="!isOnline" class="error-screen">
+<app-no-internet></app-no-internet>
+  </div>
+  
+  <noscript><a href="https://yllix.com/publishers/556741" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/300x250.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+<router-outlet></router-outlet>
+
+<!-- <div style="height:1000px;width:100%; background-color: blue;"> This is Div</div> -->
+

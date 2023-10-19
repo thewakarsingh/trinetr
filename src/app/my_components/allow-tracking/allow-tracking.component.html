@@ -1,0 +1,14 @@
+<div style="margin-top: 30%;margin-left: 30%;">
+<button mat-button color="warn"  style="border: solid 2px red;" (click)="this.ap.sendTracking()">Allow Tracking</button>
+<br>
+<br>
+
+<span *ngIf="ap.trackingStatus==true"> You are Now being tracked ..  </span>
+        
+        
+<!-- <span *ngIf="trackingAccuracy!=0&&liveTrackingStatus==true"> online </span> -->
+<img  *ngIf="this.ap.trackingStatus" style="height:20px ;width:20px;" src="../../../assets/as/green.gif   ">
+
+
+</div>
+<app-goback></app-goback>

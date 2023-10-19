@@ -1,0 +1,35 @@
+<mat-drawer-container class="Notification-container" [hasBackdrop]="true" style="">
+    <mat-drawer #NotificationDrawer class="Notification-sidenav" mode="over">
+
+        <div  class="home"style="height:100px;padding:15px;background-color:#eee;display:flex; ">
+            
+
+            <h2 style="color:white;background-color:rgb(255, 5, 0)">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notifications: 
+            
+            </h2>
+            
+            <p   style="mmargin-top:140px;  text-align: right;font-size: 20px; color:red;">
+         <br>
+             
+            
+        </div>
+
+        <mat-list role="list">
+            
+            <mat-list-item role="listitem">
+                <br>
+                    No new Notification received !
+                <br>
+            
+            </mat-list-item>
+
+        </mat-list>    
+            
+    </mat-drawer>
+
+    <button type="button" mat-button (click)="NotificationDrawer.toggle()">
+        <img style="color:rgb(255, 5, 0);width:30px; " src="../../../assets/icons/notification.png" />
+    </button>
+  
+</mat-drawer-container>

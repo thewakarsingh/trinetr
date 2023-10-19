@@ -1,0 +1,35 @@
+.header{
+    height: 100%;
+}
+
+.example-container{
+    height: 100%;
+    width: 100%;
+
+
+
+     
+}
+
+
+mat-list-item button{
+    display: flex;
+    width:100%;
+    align-items:left;
+
+    padding-left:0px;
+}
+
+button img{
+margin-left:0px;}
+
+#drawer{
+    width: 70%;
+}
+@media (min-width: 1024px) {
+
+    /* Add your laptop-specific CSS styles here */
+    #drawer {
+      /* Add other laptop-specific styles as needed */
+    }
+  }

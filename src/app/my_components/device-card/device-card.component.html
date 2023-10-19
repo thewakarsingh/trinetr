@@ -1,0 +1,28 @@
+<div id={{device.email}} style="display: flex;
+flex-direction: column; border: solid 1px #9a9393;
+margin:8px; border-radius: 6px;box-shadow: none;
+height:85px;">
+
+<img src="../../../assets/icons/delete.png"style="
+color:red; border-radius:400px;width:20px;border:solid 1px red;margin-left:90%; margin-top:9px;
+
+" (click)="deleteDevice(device.name,device.email)" type="button"  mat-raised-button color="none" mat-button >
+  
+<div style="box-shadow: none;
+background: transparent;width:80% ;margin-top:-30px;" (click)="changeCurrentDevice(device.name,device.email)" type="button"   color="none" mat-button >
+
+<mat-card  style="box-shadow: none;margin-top:12px; margin-left: 40px;">
+    <mat-card-header  >
+      <div mat-card-avatar >
+        <img class="profile-picture" src="../../../assets/icons/live-person-location (2).png" alt="">
+      </div>
+      <mat-card-title>{{device.name}}</mat-card-title>
+      <mat-card-subtitle>{{device.email}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+</div>
+ 
+
+
+</div>

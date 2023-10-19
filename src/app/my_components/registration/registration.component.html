@@ -1,0 +1,74 @@
+<br>
+
+<div  [hidden]="isLoadingHidded">
+  <app-loading-screen></app-loading-screen>
+</div>
+<img src="../../../assets/icons/logo.png" style="margin-left:35%; width: 30%;height: 48px;"><br><br>
+<p style="margin-left: 5%;margin-right: 5%; color: rgb(142, 85, 85);  text-align: center; font-size: medium;">
+
+ Real-time Mobile Tracking || Stay connected with your friends or family with live gps tracking of mobile phone.</p>
+  <mat-card style=" text-align: center;">
+   
+    <mat-card-content  *ngIf="!this.isOtpSent" >
+      
+<mat-card-header>
+      <br>
+  <mat-card-title style=" text-align: center; color:green;">Login with Email ID and OTP</mat-card-title><br>
+  <mat-card-subtitle></mat-card-subtitle>
+</mat-card-header>
+<br>
+        <mat-form-field class="example-full-width" appearance="fill"    >
+            <mat-label>Enter Email Id</mat-label>
+            <input type="email" matInput placeholder="Enter Email Id" name="emailid"  [(ngModel)]="inputEmail">
+
+          </mat-form-field><br>
+         <span style="color: red;  font-size: medium;">{{errorMSG}}</span>
+            <br><br>
+            <button mat-raised-button color="warn"  (click)="sendOTP()" style="width:100%" class="btn-block">Send OTP</button>
+
+             <br><br><br><br><br><br>
+           <!-- <button mat-raised-button color=""  (click)="guestLogin()" style="width:100%" class="btn-block">Login as Guest</button>
+           -->
+            <br><br> 
+            <a href="/privacy_policy"> Privacy Policy</a>
+
+    </mat-card-content>
+
+
+    <mat-card-content *ngIf="this.isOtpSent" >
+             <span style="color: rgb(65, 138, 49);  font-size: small;">{{emailSentMSG}}</span>
+              {{this.inputEmail}}
+             <button style="height: 20px;margin:0px;border:0px;box-shadow:none;background: transparent; border-radius: 500px;" (click)="this.isOtpSent=false" type="button"  mat-raised-button color="none" mat-button >
+              <img src="../../../assets/icons/edit.png" style="margin-bottom: 0px;height: 20px;">
+            </button>
+          <br><br>
+             <mat-form-field class="example-full-width" appearance="fill">
+
+              <mat-label>Enter OTP</mat-label>
+              <input type="number" matInput [disabled]="isInputEmailDisabled" placeholder="Enter OTP" required  [(ngModel)]="enteredOTP">
+            </mat-form-field>
+                <span style="color: red;  font-size: medium;">{{otpErrorMSG}}</span>
+
+                <br><br>
+
+            <button mat-raised-button color="warn" [disabled]="isInputEmailDisabled" (click)="verifyOTP()" style="width: 100%;" class="btn-block">Verify and Login</button>
+
+            <br><br><br>
+            <div>
+              <button mat-raised-button color="warn"  [disabled]="isResendDisabled" (click)="sendOTP()">Resend OTP </button><br>
+              <span *ngIf="isResendDisabled">Resend in {{ countdown }} seconds</span>
+            </div>
+
+
+
+<br><br><br><br><br>
+
+
+                <span style="color: green;  font-size: medium;"> * Please check spam folder also for email * </span>
+
+<br>
+
+            
+ </mat-card-content>
+
+  </mat-card>             

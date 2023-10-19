@@ -1,0 +1,26 @@
+mat-card{
+  margin-top: 3%;
+  margin-left:5%;
+  height:60%;
+  width:80%;
+
+  box-shadow: 20px;
+
+}
+
+
+mat-card-content{
+
+  width:100%;
+
+}
+
+mat-form-field{
+  width:100%;
+  
+}
+
+
+input{
+  width:100%;
+}

@@ -1,0 +1,49 @@
+<div style="height: 100%;
+overflow: auto;">
+
+<br>
+<br>
+    <h2 style="color:white;background-color:rgb(255, 5, 0)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instructions</h2>
+
+
+
+<h2> &nbsp;&nbsp;&nbsp;Instructions for using Trinetr app.</h2>
+    <p>1. Login using your email Id and OTP .<br>
+        2. Click on Add New Mobile device to add Mobile as device.<br>
+        3. Enter name You want to be displayed for device.<br>
+        4. Enter email Id of device which you want to track.<br>
+        5. Click on add button.<br>
+        6. Click on refresh button to load tracking information.<br>
+        6. All done.<br>
+
+
+    </p>
+ <img src="../../../assets/icons/playStoreDownloadButton.png" (click)="openPlayStore()" style="width: 120px;height: 48px;">
+
+           <a href={{this.head.trinetrAndroidLink}} *ngIf="this.head.trinetrAndroidLink!='false'" target="_blank" download="Trinetr"> <img src="../../../assets/icons/appStoreDownloadButton.png"  style="width: 120px;height: 48px;">
+           </a>
+
+<br><br>
+<h2>&nbsp;&nbsp;&nbsp;Instructions to use Trackify App.</h2>
+  <p> 
+    1. CLick on Link below and Install the app.<br>
+    2. Turn on device location services.<br>
+    3. Open installed app. and Login with email ID and OTP<br>
+    4. There is a text field above start button select it.<br>
+    5. Enter the email Id on which you want to track the device.<br>
+    6. Click on Start button.<br>
+    7. Close the app.<br>
+    8. You can see in notification bar to see if app is running.<br>
+    9. All done.<br>
+
+</p>
+
+<a href={{this.head.trackifyAndroidLink}} target="_blank" download="Trackify.apk"> <img src="../../../assets/icons/playStoreDownloadButton.png"  style="width: 120px;height: 48px;">
+</a>
+
+<a href={{this.head.trackifyIosLink}} *ngIf="this.head.trackifyIosLink!='false'" target="_blank" download="Trackify.app"> <img src="../../../assets/icons/appStoreDownloadButton.png"  style="width: 120px;height: 48px;">
+</a><br>
+<h2 style="margin-left: 20%;">.......Thank you.......</h2>
+</div>
+
+<app-goback></app-goback>

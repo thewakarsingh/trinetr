@@ -1,0 +1,54 @@
+.header{
+    display: flex;
+    margin-left: 40px;
+    font-size: 20;
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+.header-item-right{
+    margin-left:30px;
+    
+}
+
+.material-symbols-outlined{
+    font-size: 34px;
+}
+
+.caraousalImage{
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 190px;
+
+
+}
+
+.imageText{
+
+    position: absolute;
+    margin-top: -130px;
+    margin-left: 370px;
+    color: white;
+    width: 610px;
+}
+
+.body{
+    text-justify: auto;
+  
+    margin-left: 60px;
+    margin-right: 60px;
+
+    color: rgb(82, 77, 77);
+}
+
+
+.bodyImage{
+
+    width: 340px;
+    height:120px;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+

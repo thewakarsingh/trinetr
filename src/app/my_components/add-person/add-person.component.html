@@ -1,0 +1,57 @@
+<br>
+<form #locText="ngForm" class="addpersonForm"(ngSubmit)="addPerson(locText.value)">
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Add new Mobile Device</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+          <br><br>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="example-full-width" appearance="fill"      >
+                <mat-label>Enter Device Display Name</mat-label>
+                <input matInput name="name" ngModel  required>
+            </mat-form-field>
+            </mat-card-content>
+
+        <mat-card-content>
+            <mat-form-field class="example-full-width" appearance="fill"  >
+                <mat-label>Enter Trackify Registered Email Id </mat-label>
+                <input matInput type="email"  name="emailid" ngModel  required>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-content style=" text-align: center;">
+            <mat-form-field class="example-full-width" appearance="fill"  >
+                <mat-label>Enter access code of Trackify app. </mat-label>
+                <input matInput  type="number"  name="accesscode" ngModel  required>
+            </mat-form-field>  
+            <span  *ngIf="acessCodeError!=''" style="color: red;  font-size: small;">*{{acessCodeError}}<br></span>
+
+        </mat-card-content>
+        <mat-card-content style="text-align: center; ">
+            <button mat-raised-button color="warn" style="width:50%"  ng-click="getPositionByName(locText.value)">Add Device</button>
+
+            <br><br><br><br><hr>
+
+            <h4 style="color:green;"> Please download Trackify app from link given below in the phone which you want to track, and enter email id and access code from Trackify app to add device.</h4>
+            <button style="margin-left:0px; width:70%; height:48px; align-self:center;" type="button"  mat-raised-button color="warn" (click)="copyDownloadLink()" mat-button >
+                <img src="../../../assets/icons/copy.png" style="width:32px;height:32px;">
+                <span> Copy download Link</span>
+              </button>
+            <!-- <a href={{this.head.trackifyAndroidLink}} target="_blank" download="Trackify.apk">  <img src="../../../assets/icons/playStoreDownloadButton.png"  style="width: 120px;height: 48px; "></a>  -->
+            <br> 
+            <br> 
+ 
+            <img src="../../../assets/icons/share.png" (click)="share()" style="width: 32px;height: 32px;"><br>          
+              <br> 
+
+           <a href={{this.head.trackifyIosLink}} *ngIf="this.head.trackifyIosLink!='false'" target="_blank"> <img src="../../../assets/icons/appStoreDownloadButton.png"  style="width: 120px;height: 48px;">
+           </a>
+        </mat-card-content>
+      </mat-card>                          
+       
+    </form> 
+
+    <br><br>
+    <app-goback></app-goback>

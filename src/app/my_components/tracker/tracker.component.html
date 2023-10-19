@@ -1,0 +1,66 @@
+
+<div class="messageBar">
+
+
+  <span *ngIf="liveTrackingStatus==true &&trackingFound==true&&liveTrackingScreenMsg=='none'" style="color:green; ">{{liveTrackingMsg}}  </span>
+  <span *ngIf="liveTrackingScreenMsg!='none' &&trackingFound==true" style="color:green;">{{liveTrackingScreenMsg}}  </span><br>
+  <span *ngIf="trackingClicked==true&&trackingFound==false" style="color:red; font-size: medium; "> {{trackingStatusMsg}}  </span>
+
+    <span *ngIf=" trackingFound==true"><img src="../../../assets/as/end.png"  style="padding-right:0px; height: 24px;margin-bottom:-9px;">
+      {{liveAddress}}</span>
+    <span *ngIf="ToTrackEmailid==null||ToTrackEmailid==''&&devicelist!=null" style="  color:green; font-size: medium; "> Please select device from device list.</span><br>
+    <span *ngIf="devicelist==null" style=" margin-bottom: 8px; color:green; font-size: small; "> PLease add New Mobile device to start Tracking</span>
+    <img  *ngIf="trackingAccuracy!=0&&liveTrackingStatus==false" style="height:20px ;width:20px;" src="../../../assets/as/red.png   ">
+    <br>
+</div>
+
+<div id="map"></div>
+<div>
+  <button mat-fab extended color="green" style="width:48px;  height:48px;margin-left:85%; position:fixed; z-index:4; bottom:158px;  " (click)="this.setViewCurrent()">
+  <img src="../../../assets/icons/setview.png"  style="height: 32px; ">
+  </button>
+</div>
+ <div style="width:100%;position:fixed;bottom:0px;background-color:#f8f3f3;display:flex;height:90px;">
+
+      <button style="width: 20%; box-shadow:none;background: transparent; border-radius: 100px;" (click)="toggleDisplayDeviceList()" type="button"  mat-raised-button color="none" mat-button >
+        <img src="../../../assets/icons/expendup.png" *ngIf="deviceListUp==false"  style=" height: 32px;">
+        <img src="../../../assets/icons/expenddown.png" *ngIf="deviceListUp==true" style=" height: 32px;">
+       <h6>Device List</h6>
+      </button>
+      <div style=" display: inline-block;background: transparent;width: 50%;text-align:center; padding-top:24px; box-shadow: none;">
+        <span *ngIf="!(ToTrackEmailid==null||ToTrackEmailid==''&&devicelist!=null)">
+          <span style="font-size: medium; white-space: normal;">{{ToTrackName}} &nbsp;&nbsp; <img src="../../../assets/as/battery.png" style="height: 16px;width:16px;">{{ToTrackBatteryP}}%</span>
+         <br>
+          <span style="font-size: 10px;">{{ToTrackEmailid}}</span>
+          </span>
+      </div>                          
+      <form  #trackUserEmail="ngForm" (ngSubmit)="trackUser(trackUserEmail.value)" style="margin-top: 8px;
+      display: inline-block;">
+          <input matInput  class="aas"  [matDatepicker]="picker1" placeholder="From Date" [(ngModel)]="date1" name="date" style="display:none; " [max]="maxDate" (dateChange)="trackUser(trackUserEmail.value)">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker style="background-color: rgb(245, 239, 239);width: 600px;"   #picker1></mat-datepicker>
+          <input matInput value="" name="emailid" style="display:none;" name="email" ngModel  required>       
+        <button id="reload" mat-fab extended color="warn"  ng-click="trackUser(trackUserEmail.value)">
+          <img src="../../../assets/icons/reload.png" style="height: 32px; width:32px">
+
+          </button>
+      </form>
+ </div>
+
+<div id="devicelist" style="margin-top:100%;bottom:90px;
+overflow-y: auto;display:none;padding: 5%;background-color: antiquewhite;  box-shadow: 0 3px 1px rgb(0 0 0 / 0.2);
+position:fixed; width:90%; background-color:white;z-index:4;height:50%;">
+  <h4 *ngIf="noDeviceFound==true" style=" color: green; margin-left:10%; align-self:center;">! Please add new Device to start Tracking</h4>
+
+  <ng-container *ngFor="let device of devicelist" id="deviceCardDiv">
+
+
+    <app-device-card   [device]="device" *ngIf="device.email!=undefined">
+    </app-device-card>
+  </ng-container>
+
+  <button style="margin-top:40px;margin-left: 16%;  align-self:center;" type="button"  mat-raised-button color="warn" routerLink="/home/addperson" mat-button >
+    <img src="../../../assets/icons/add.png">
+    <span> Add new Mobile Device </span>
+  </button>
+</div>
